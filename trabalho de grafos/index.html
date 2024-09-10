@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Algoritmos em Grafos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Trabalho de Algoritmo em Grafos</h1>
+        <h2>Guilherme Carvalho da Rosa</h2>
+    </header>
+
+        <div id="formulario">
+            <h3>Montar um Grafo</h3>
+
+            <!-- Tipo e número de nós -->
+            <div id="div-nos">
+                <label for="tipo">Tipo de Grafo:</label>
+                <select id="tipo" onchange="selecionaTipo()">
+                    <option value="direcional-nao-ponderado">Direcional Não Ponderado</option>
+                    <option value="nao-direcional-ponderado">Não Direcional Ponderado</option>
+                </select>
+                <br>
+                <label for="qtd-nos">Número de Nós:</label>
+                <input type="number" id="qtd-nos" min="1">
+                <button onclick="numeroDeNos()">Salvar</button>
+            </div>
+
+            <!-- Nomear Nós -->
+            <div id="div-nomes" style="display: none;">
+                <h4>Nomear os Nós:</h4>
+                <div id="div-campos-nomes"></div>
+                <button class="botao-salvar" onclick="salvarNomes()">Salvar</button>
+            </div>
+
+            <!-- Adicionar Aresta -->
+            <div id="div-arestas" style="display: none;">
+                <label for="origem">De:</label>
+                <select id="origem"></select>
+                <label for="destino">Para:</label>
+                <select id="destino"></select>
+                <span id="div-peso" style="display: none;">
+                    <label for="peso">Peso:</label>
+                    <input type="number" id="peso" min="0">
+                </span>
+                <button onclick="addAresta()">Adicionar Aresta</button>
+            </div>
+
+            <!-- Botões de Imprimir e Limpar -->
+            <div class="div-botoes">
+                <button onclick="imprimir()">Imprimir Grafo</button>
+                <button onclick="limpar()">Limpar Grafo</button>
+            </div>
+
+            <!-- Imprime o grafo -->
+            <div id="exibe-grafo" style="display: none;"></div>
+            <br>
+
+            <!-- Ordenação Topológica -->
+            <button id="botao-ordena-topologica" style="display: none;" onclick="mostrarOrdenacaoTopologica()">Ordenação Topológica</button>
+            <div id="div-ordena-topo" style="display: none;">
+                <label for="no-ordena-topo">Escolha um Nó:</label>
+                <select id="no-ordena-topo"></select>
+                <button onclick="ordenacaoTopologica()">Ordenar</button>
+            </div>
+            <br>
+            <!-- Componentes Fortemente Conectados 
+            <button id="botao-fortemente-conectado" style="display: none;" onclick="">Componentes Fortemente Conectados</button>
+            <div id="div-fortemente-conectado" style="display: none;">
+                <h4>Matriz Transposta:</h4>
+                <div id="div-matriz"></div>
+
+                <h4>Conjuntos de Grafos Fortemente Conectados:</h4>
+                <div id="div-conj-conec"></div>
+
+                <h4>Ordem de Descoberta e Finalização:</h4>
+                <div id="div-ordena-desc"></div>
+            </div>-->
+        </div>
+        <hr>
+    <script src="script.js"></script>
+</body>
+</html>
